@@ -10,8 +10,11 @@ object DangerPlugin extends AutoPlugin {
   override def requires = JvmPlugin
 
   object autoImport {
-    val exampleSetting = settingKey[String]("A setting that is automatically imported to the build")
-    val exampleTask = taskKey[String]("A task that is automatically imported to the build")
+    val exampleSetting = settingKey[String](
+      "A setting that is automatically imported to the build"
+    )
+    val exampleTask =
+      taskKey[String]("A task that is automatically imported to the build")
   }
 
   import autoImport._

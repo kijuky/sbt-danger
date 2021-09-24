@@ -1,4 +1,3 @@
-
 name := """sbt-danger"""
 organization := "io.github.kijuky"
 version := "0.1-SNAPSHOT"
@@ -19,19 +18,23 @@ sbtPlugin := true
 //libraryDependencies ++= Seq("org.specs2" %% "specs2-core" % "4.12.8" % "test")
 //scalacOptions in Test ++= Seq("-Yrangepos")
 
-inThisBuild(List(
-  organization := "io.github.kijuky",
-  homepage := Some(url("https://github.com/sbt/sbt-autoplugin.g8")),
-  licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  developers := List(
-    Developer(
-      "kijuky",
-      "Kizuki YASUE",
-      "ikuzik@gmail.com",
-      url("https://github.com/kijuky")
+inThisBuild(
+  List(
+    organization := "io.github.kijuky",
+    homepage := Some(url("https://github.com/sbt/sbt-autoplugin.g8")),
+    licenses := List(
+      "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")
+    ),
+    developers := List(
+      Developer(
+        "kijuky",
+        "Kizuki YASUE",
+        "ikuzik@gmail.com",
+        url("https://github.com/kijuky")
+      )
     )
   )
-))
+)
 
 console / initialCommands := """import io.github.kijuky.sbt.plugins.danger._"""
 
@@ -55,4 +58,3 @@ ThisBuild / githubWorkflowPublish := Seq(
     )
   )
 )
-
