@@ -1,5 +1,5 @@
 package io.github.kijuky.sbt.plugins.danger
 
-class DangerTest {
+class DangerSpec {
   // write tests with your preferred framework
 }

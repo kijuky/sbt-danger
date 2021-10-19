@@ -1,5 +1,4 @@
-name := """sbt-danger"""
-organization := "io.github.kijuky"
+name := "sbt-danger"
 version := "0.1-SNAPSHOT"
 
 sbtPlugin := true
@@ -19,10 +18,10 @@ sbtPlugin := true
 //scalacOptions in Test ++= Seq("-Yrangepos")
 
 inThisBuild(
-  List(
+  Seq(
     organization := "io.github.kijuky",
     homepage := Some(url("https://github.com/sbt/sbt-autoplugin.g8")),
-    licenses := List(
+    licenses := Seq(
       "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")
     ),
     developers := List(
@@ -36,12 +35,12 @@ inThisBuild(
   )
 )
 
-console / initialCommands := """import io.github.kijuky.sbt.plugins.danger._"""
+console / initialCommands := "import io.github.kijuky.sbt.plugins.danger._"
 
 enablePlugins(ScriptedPlugin)
 // set up 'scripted; sbt plugin for testing sbt plugins
 scriptedLaunchOpts ++=
-  Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
+  Seq("-Xmx1024M", s"-Dplugin.version=${version.value}")
 
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
 ThisBuild / githubWorkflowPublishTargetBranches :=

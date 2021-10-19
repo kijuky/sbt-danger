@@ -1,13 +1,12 @@
 package io.github.kijuky.sbt.plugins.danger
 
 import sbt._
-import sbt.Keys._
 import sbt.plugins.JvmPlugin
 
 object DangerPlugin extends AutoPlugin {
 
   override def trigger = allRequirements
-  override def requires = JvmPlugin
+  override def requires: Plugins = JvmPlugin
 
   object autoImport {
     val exampleSetting = settingKey[String](
@@ -21,7 +20,7 @@ object DangerPlugin extends AutoPlugin {
 
   override lazy val projectSettings = Seq(
     exampleSetting := "just an example",
-    exampleTask := "computed from example setting: " + exampleSetting.value
+    exampleTask := s"computed from example setting: ${exampleSetting.value}"
   )
 
   override lazy val buildSettings = Seq()

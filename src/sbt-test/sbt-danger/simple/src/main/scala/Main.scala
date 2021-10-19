@@ -5,13 +5,13 @@ package simple
   */
 class Main {
   val default = "the function returned"
-  def method = default + " " + Main.function
+  def method = s"$default ${Main.function}"
 }
 
 object Main {
 
   val constant = 1
-  def function = 2*constant
+  def function: Int = 2 * constant
 
   def main(args: Array[String]): Unit = {
     println(new Main().default)
